@@ -1,0 +1,68 @@
+﻿@model NewsAgency.Models.ShowNewsStatusViewModel
+
+@{
+    ViewBag.Title = "ShowNewsWithStatus";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+@section Scripts{
+
+}
+@section Links{
+    @Html.Partial((string)ViewBag.PanelName)
+
+}
+@section Body{
+    <h2>View News</h2>
+
+
+    <div class="container">
+
+        @if (Model.News.Count() != 0)
+        {
+
+
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>News Title</th>
+                        <th>News Summary</th>
+                        <th>Status</th>
+                    </tr>
+
+                    @foreach (var item in Model.News)
+                    {
+                        <tr>
+                            <td>@item.Title.Substring(0, item.Title.Length > 30 ? 30 : item.Title.Length) ...</td>
+                            <td>@item.Summary.Substring(0, item.Summary.Length > 30 ? 30 : item.Summary.Length) ...</td>
+                            <td>
+                                @if (item.Status == NewsAgency.Models.NewsStatusEnum.Confirmed)
+                                {
+                                    <div class="label label-success">Approved</div>
+                                }
+                                else if (item.Status == NewsAgency.Models.NewsStatusEnum.Rejected)
+                                {
+                            <div class="label label-danger">Rejected</div>
+                                }
+                                else
+                                {
+                            <div class="label label-info">Pending approval</div>
+                                }
+                            </td>
+                        </tr>
+                    }
+
+                </thead>
+            </table>
+            <div>
+                @Html.PageLinks(Model.PagingInfo, x => Url.Action("ShowNewsWithStatus", new { status = (int)@Model.News.FirstOrDefault().Status, page = x, username = @User.Identity.Name }))
+            </div>
+        }
+        else
+        {
+    <div class="label label-danger">No news available</div>
+        }
+    </div>
+
+}
+

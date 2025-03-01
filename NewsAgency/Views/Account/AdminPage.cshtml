@@ -1,0 +1,44 @@
+﻿@model NewsAgency.Models.AdminPanelViewModel
+
+@{
+    ViewBag.Title = "AdminPage";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+@section Scripts{
+
+}
+
+
+@section Links{
+    @Html.Partial((string)ViewBag.PanelName)
+
+}
+@section Body{
+
+
+
+    <div class="panel panel-primary">
+        <div class="panel-heading">
+            <h2> @Model.Name @Model.Family Welcome</h2>
+        </div>
+        <div class="panel-body">
+            <div class="row">
+                <div class="col-md-4 col-sm-4">
+
+                    <a class="btn btn-info" href="/NewsManagement/ConfirmNews"> Number of pending news approvals<span class="badge">@Model.Waiting_News_Count</span></a>
+                </div>
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+
+
+
+
+}
+

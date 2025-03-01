@@ -1,0 +1,71 @@
+﻿@model NewsAgency.Models.HomePageModel
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+@section Scripts{
+
+}
+@section Links{
+    @Html.Partial("UserPanel", Model.Categories)
+
+}
+
+@section Body{
+    <div class="container">
+        <!-- Page Heading -->
+        <div class="row">
+            <div class="col-lg-12">
+                <h1 class="page-header">
+                    Latest News
+                    <small>Stay up to date with us!</small>
+                </h1>
+            </div>
+        </div>
+        <!-- /.row -->
+        <!-- Project One -->
+        @if (Model != null && (Model.NewsList != null && Model.NewsList.Count() != 0))
+        {
+            foreach (var item in Model.NewsList)
+            {
+                <div class="row">
+                    <div class="col-md-7">
+                        <a href="#">
+                            @{
+                                var base64 = Convert.ToBase64String(item.ImageData);
+                                var imgSrc = String.Format("data:image/jpg;base64,{0}", base64);
+                            }
+                            <img class="img-responsive" src="@imgSrc" alt="">
+                        </a>
+                    </div>
+                    <div class="col-md-5">
+                        <h3>@item.Title</h3>
+                        <h4>@item.Summary</h4>
+                        <p>@item.MainContent.Substring(0, item.MainContent.Length > 30 ? 30 : item.MainContent.Length) ...</p>
+                        <a class="btn btn-primary" href="/Home/ReadNews?Id=@item.Id">Read News <span class="glyphicon glyphicon-chevron-right"></span></a>
+                    </div>
+                </div>
+                <hr>
+
+            }
+
+        }
+        else
+        {
+            <div class="label label-danger">No news available</div>
+
+        }
+
+
+        <div>
+            @Html.PageLinks(Model.PagingInfo, x => Url.Action("Index", new { page = x, category = @ViewBag.category }))
+        </div>
+        <hr>
+
+
+
+    </div>
+}
+

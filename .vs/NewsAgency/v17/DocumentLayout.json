@@ -1,0 +1,88 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Mahsa Aminiyan\\source\\repos\\NewsAgency\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{C6CE9850-F55A-448D-8BB9-51FB97E95F93}|NewsAgency\\NewsAgency.csproj|c:\\users\\mahsa aminiyan\\source\\repos\\newsagency\\newsagency\\views\\usermanagement\\newuser.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{C6CE9850-F55A-448D-8BB9-51FB97E95F93}|NewsAgency\\NewsAgency.csproj|solutionrelative:newsagency\\views\\usermanagement\\newuser.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C6CE9850-F55A-448D-8BB9-51FB97E95F93}|NewsAgency\\NewsAgency.csproj|C:\\Users\\Mahsa Aminiyan\\source\\repos\\NewsAgency\\newsagency\\controllers\\usermanagementcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C6CE9850-F55A-448D-8BB9-51FB97E95F93}|NewsAgency\\NewsAgency.csproj|solutionrelative:newsagency\\controllers\\usermanagementcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C6CE9850-F55A-448D-8BB9-51FB97E95F93}|NewsAgency\\NewsAgency.csproj|c:\\users\\mahsa aminiyan\\source\\repos\\newsagency\\newsagency\\views\\newsmanagement\\managenews.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{C6CE9850-F55A-448D-8BB9-51FB97E95F93}|NewsAgency\\NewsAgency.csproj|solutionrelative:newsagency\\views\\newsmanagement\\managenews.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C6CE9850-F55A-448D-8BB9-51FB97E95F93}|NewsAgency\\NewsAgency.csproj|C:\\Users\\Mahsa Aminiyan\\source\\repos\\NewsAgency\\newsagency\\controllers\\newsmanagementcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C6CE9850-F55A-448D-8BB9-51FB97E95F93}|NewsAgency\\NewsAgency.csproj|solutionrelative:newsagency\\controllers\\newsmanagementcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "NewUser.cshtml",
+              "DocumentMoniker": "C:\\Users\\Mahsa Aminiyan\\source\\repos\\NewsAgency\\NewsAgency\\Views\\UserManagement\\NewUser.cshtml",
+              "RelativeDocumentMoniker": "NewsAgency\\Views\\UserManagement\\NewUser.cshtml",
+              "ToolTip": "C:\\Users\\Mahsa Aminiyan\\source\\repos\\NewsAgency\\NewsAgency\\Views\\UserManagement\\NewUser.cshtml",
+              "RelativeToolTip": "NewsAgency\\Views\\UserManagement\\NewUser.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-03-01T10:07:35.169Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "UserManagementController.cs",
+              "DocumentMoniker": "C:\\Users\\Mahsa Aminiyan\\source\\repos\\NewsAgency\\NewsAgency\\Controllers\\UserManagementController.cs",
+              "RelativeDocumentMoniker": "NewsAgency\\Controllers\\UserManagementController.cs",
+              "ToolTip": "C:\\Users\\Mahsa Aminiyan\\source\\repos\\NewsAgency\\NewsAgency\\Controllers\\UserManagementController.cs",
+              "RelativeToolTip": "NewsAgency\\Controllers\\UserManagementController.cs",
+              "ViewState": "AgIAAC8AAAAAAAAAAAAIwDkAAAAfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-28T19:01:27.486Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "ManageNews.cshtml",
+              "DocumentMoniker": "C:\\Users\\Mahsa Aminiyan\\source\\repos\\NewsAgency\\NewsAgency\\Views\\NewsManagement\\ManageNews.cshtml",
+              "RelativeDocumentMoniker": "NewsAgency\\Views\\NewsManagement\\ManageNews.cshtml",
+              "ToolTip": "C:\\Users\\Mahsa Aminiyan\\source\\repos\\NewsAgency\\NewsAgency\\Views\\NewsManagement\\ManageNews.cshtml",
+              "RelativeToolTip": "NewsAgency\\Views\\NewsManagement\\ManageNews.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAADgAAABSAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-03-01T09:32:26.309Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "NewsManagementController.cs",
+              "DocumentMoniker": "C:\\Users\\Mahsa Aminiyan\\source\\repos\\NewsAgency\\NewsAgency\\Controllers\\NewsManagementController.cs",
+              "RelativeDocumentMoniker": "NewsAgency\\Controllers\\NewsManagementController.cs",
+              "ToolTip": "C:\\Users\\Mahsa Aminiyan\\source\\repos\\NewsAgency\\NewsAgency\\Controllers\\NewsManagementController.cs",
+              "RelativeToolTip": "NewsAgency\\Controllers\\NewsManagementController.cs",
+              "ViewState": "AgIAAIEAAAAAAAAAAAAuwIQAAAAgAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-28T19:01:18.327Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

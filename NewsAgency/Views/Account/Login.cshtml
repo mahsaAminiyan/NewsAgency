@@ -1,0 +1,102 @@
+﻿@model NewsAgency.Models.LoginInformation
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>ورود به سامانه</title>
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/css/bootstrap-rtl.css" rel="stylesheet" />
+    <!-- Custom CSS -->
+    <link href="~/Content/1-col-portfolio.css" rel="stylesheet" />
+    <style>
+        body {
+            font-family: tahoma;
+            font-size: 14pt;
+        }
+
+        .business-header {
+            height: 400px;
+            background: url(Images/banner.jpg) center center no-repeat scroll;
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            background-size: cover;
+            -o-background-size: cover;
+            margin: 0px;
+        }
+
+
+        .tagline {
+            text-shadow: 0 0 10px #000;
+            color: #fff;
+            font-family: tahoma;
+        }
+
+        .img-center {
+            margin: 0 auto;
+        }
+
+        footer {
+            margin: 50px 0;
+        }
+
+        h3, h2, h1, h4 {
+            font-family: tahoma;
+            font-size: 14pt;
+        }
+    </style>
+
+</head>
+<body>
+
+    <div class="container">
+        <div id="loginbox" style="margin-top:50px;" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+            <div class="panel panel-info">
+                <div class="panel-heading">
+                    <div class="panel-title">ورود به سامانه</div>
+                    <div style="float:left; font-size: 80%; position: relative; top:-10px"><a href="#">رمز خود را فراموش کردید؟</a></div>
+                </div>
+                <div style="padding-top:30px" class="panel-body">
+                    <div style="display:none" id="login-alert" class="alert alert-danger col-sm-12"></div>
+
+                    @using (Html.BeginForm("Login", "Account", FormMethod.Post, null))
+                    {
+
+                        <div style="margin-bottom: 25px" class="input-group">
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                            @Html.EditorFor(m => m.UserName, new { htmlAttributes = new { @class = "form-control", placeholder = "نام کاربری" } })
+                        </div>
+
+                        <div style="margin-bottom: 25px" class="input-group">
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+                            @Html.EditorFor(m => m.Password, new { htmlAttributes = new { @class = "form-control", placeholder = "رمز عبور" } })
+
+
+                        </div>
+                        <div style="margin-top:10px;color:red" class="form-group">
+                            @Html.ValidationSummary()
+                            @ViewBag.ErrorMessage
+                        </div>
+                        <div style="margin-top:10px" class="form-group">
+                            <!-- Button -->
+                            <div class="col-sm-12 controls">
+                                <input type="submit" value="ورود" class="btn btn-success" />
+
+                            </div>
+                        </div>
+
+
+                    }
+
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+</body>
+</html>
+

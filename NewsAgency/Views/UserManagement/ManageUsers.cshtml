@@ -1,0 +1,81 @@
+﻿@model NewsAgency.Models.UserInfoModel
+
+@{
+    ViewBag.Title = "ManageUsers";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+@section Scripts{
+
+}
+@section Links{
+    @Html.Partial((string)ViewBag.PanelName)
+
+}
+
+@section Body{
+
+
+    <h2>Show News</h2>
+
+
+    <div class="container">
+        @using (Html.BeginForm())
+        {
+
+
+            <div class="row">
+                <div class="col-md-2 col-sm-12">
+                    Username
+                </div>
+                <div class="col-md-4 col-sm-12">
+                    @Html.TextBox("username", "", new { @class = "form-control" })
+                </div>
+                <div class="col-md-3 col-sm-12">
+                    <input type="submit" class="btn btn-danger" value="Search" />
+                    @Html.ActionLink("New User", "NewUser", null, new { @class = "btn btn-success" })
+
+
+                </div>
+            </div>
+        }
+        @if (Model.Users != null && Model.Users.Count() != 0)
+        {
+
+
+            <table class="table table-responsive table-striped">
+                <thead>
+                    <tr>
+                        <th>Username</th>
+                        <th>Name </th>
+                        <th>Last Name</th>
+                        <th>Action</th>
+                    </tr>
+
+                    @foreach (var item in Model.Users)
+                    {
+                        <tr>
+                            <td>@item.Username</td>
+                            <td>@item.Name</td>
+                            <td>@item.Family</td>
+
+                            <td>
+                                @Html.ActionLink("Show", "EditUser", new { @username = item.Username }, new { @class = "btn btn-info" })
+                            </td>
+                        </tr>
+                    }
+
+                </thead>
+            </table>
+
+            <div>
+                @Html.PageLinks(Model.PagingInfo, x => Url.Action("ManageUsers", new { page = x, username = @ViewBag.Username }))
+            </div>
+        }
+        else
+        {
+            <div class="label label-danger">No user Availble</div>
+        }
+    </div>
+}
+

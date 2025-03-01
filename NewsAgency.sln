@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.11.35208.52
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NewsAgency", "NewsAgency\NewsAgency.csproj", "{C6CE9850-F55A-448D-8BB9-51FB97E95F93}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DAL", "DAL\DAL.csproj", "{EF0D8731-1FF2-4A9F-8749-05D584A744C0}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C6CE9850-F55A-448D-8BB9-51FB97E95F93}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C6CE9850-F55A-448D-8BB9-51FB97E95F93}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C6CE9850-F55A-448D-8BB9-51FB97E95F93}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C6CE9850-F55A-448D-8BB9-51FB97E95F93}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EF0D8731-1FF2-4A9F-8749-05D584A744C0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EF0D8731-1FF2-4A9F-8749-05D584A744C0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EF0D8731-1FF2-4A9F-8749-05D584A744C0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EF0D8731-1FF2-4A9F-8749-05D584A744C0}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {F2BB0C84-030A-4DD1-835E-21C3144C288B}
+	EndGlobalSection
+EndGlobal

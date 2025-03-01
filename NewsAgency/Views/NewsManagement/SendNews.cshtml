@@ -1,0 +1,94 @@
+﻿@model NewsAgency.Models.NewsModel
+
+@{
+    ViewBag.Title = "SendNews";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+@section Scripts{
+
+}
+@section Links{
+    @Html.Partial((string)ViewBag.PanelName)
+
+}
+@section Body{
+    <h2>Submit New News</h2>
+
+
+    <div class="container">
+        <div class="alert alert-success alert-dismissible fade in" style="display:@ViewBag.VisibleSuccessAlert">
+            <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+            <strong>Operation Successful!</strong>  @ViewBag.SuccessfulMessage
+        </div>
+        <div class="alert alert-danger alert-dismissible fade in" style="display:@ViewBag.VisibleFailedAlert">
+            <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+            <strong>Operation Failed!</strong>  @ViewBag.ErrorMessage
+        </div>
+        <div id="loginbox" style="margin-top:50px;" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+            <div class="panel panel-info">
+                <div class="panel-heading">
+                    <div class="panel-title">News Information</div>
+                </div>
+                <div style="padding-top:30px" class="panel-body">
+                    <div style="display:none" id="login-alert" class="alert alert-danger col-sm-12"></div>
+
+                    @using (Html.BeginForm("SendNews", "NewsManagement", FormMethod.Post, new { enctype = "multipart/form-data" }))
+                    {
+                        <div style="margin-bottom: 25px" class="input-group">
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-eye-open"></i></span>
+                            @Html.DropDownListFor(x => x.Category, Model.Categories, new { @class = "form-control" })
+                        </div>
+                        <div style="margin-bottom: 25px" class="input-group">
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-pencil"></i></span>
+                            @Html.EditorFor(m => m.Title, new { htmlAttributes = new { @class = "form-control", placeholder = "News Title" } })
+                        </div>
+
+                        <div style="margin-bottom: 25px" class="input-group">
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-open-file"></i></span>
+                            @Html.EditorFor(m => m.Summary, new { htmlAttributes = new { @class = "form-control", placeholder = "News Summary (Max 100 characters)" } })
+
+
+                        </div>
+                        <div style="margin-bottom: 25px" class="input-group">
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-align-right"></i></span>
+                            @Html.TextAreaFor(m => m.MainContent, 10, 50, new { htmlAttributes = new { @class = "form-control", placeholder = "Main News Text", cols = 80, rows = 10 } })
+
+
+                        </div>
+
+                        <div style="margin-bottom: 25px" class="input-group">
+                            <label>News Image in jpg Format</label>
+                            <input type="file" name="NewsImage" size="40" accept="image/*" />
+
+                        </div>
+
+                        <div style="margin-top:10px;color:red" class="form-group">
+                            @Html.ValidationSummary()
+                            @ViewBag.ErrorMessage
+                        </div>
+                        <div style="margin-top:10px" class="form-group">
+                            <!-- Button -->
+                            <div class="col-sm-12 controls">
+                                <input type="submit" value="Submit News" class="btn btn-success" />
+
+                            </div>
+                        </div>
+
+                        <div style="margin-top:10px;color:green" class="form-group">
+
+                            @ViewBag.SuccessfulMessage
+                        </div>
+
+
+                    }
+
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+}
+

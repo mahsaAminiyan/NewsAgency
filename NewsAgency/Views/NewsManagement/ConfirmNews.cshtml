@@ -1,0 +1,61 @@
+﻿@model NewsAgency.Models.ShowNewsStatusViewModel
+
+@{
+    ViewBag.Title = "ConfirmNews";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+@section Scripts{
+
+}
+@section Links{
+    @Html.Partial((string)ViewBag.PanelName)
+
+}
+@section Body{
+    <h2>View News</h2>
+
+
+    <div class="container">
+
+        @if (Model.News.Count() != 0)
+        {
+
+
+            <table class="table table-responsive table-striped">
+                <thead>
+                    <tr>
+                        <th>News Category</th>
+                        <th>News Title</th>
+                        <th>Reporter</th>
+                        <th>Actions</th>
+                    </tr>
+
+                    @foreach (var item in Model.News)
+                    {
+                        <tr>
+                            <td>@item.Category</td>
+                            <td>@item.Title.Substring(0, item.Title.Length / 2) ...</td>
+                            <td>@item.ReporterName</td>
+                            <td>
+                                @Html.ActionLink("View", "ShowNewsForConfirm", new { Id = @item.Id }, new { @class = "btn btn-success" })
+                            </td>
+                        </tr>
+                    }
+
+                </thead>
+            </table>
+
+            <div>
+                @Html.PageLinks(Model.PagingInfo, x => Url.Action("ConfirmNews", new { page = x }))
+            </div>
+        }
+        else
+        {
+    <div class="label label-danger">No news available</div>
+        }
+    </div>
+
+}
+
+

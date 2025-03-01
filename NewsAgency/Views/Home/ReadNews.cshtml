@@ -1,0 +1,43 @@
+﻿@model NewsAgency.Models.NewsModel
+
+@{
+    ViewBag.Title = "ReadNews";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+@section Scripts{
+
+}
+@section Links{
+    @Html.Partial("UserPanel", (List<string>)ViewBag.Categories)
+
+}
+@{
+    var base64 = Convert.ToBase64String(Model.ImageData);
+    var imgSrc = String.Format("data:image/jpg;base64,{0}", base64);
+}
+@section Body{
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                @Html.HiddenFor(m => m.Id)
+                <h1>@Model.Title</h1>
+            </div>
+            <div class="col-md-12">
+                <h2>@Model.Summary</h2>
+            </div>
+            <div class="col-md-8">
+                <img src="@imgSrc" width="700" height="300" />
+            </div>
+            <div class="col-md-4">
+            </div>
+            <div class="col-md-8">
+                <p>@Model.MainContent</p>
+            </div>
+            <div class="col-md-4">
+            </div>
+
+        </div>
+    </div>
+

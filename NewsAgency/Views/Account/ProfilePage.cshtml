@@ -1,0 +1,69 @@
+﻿@model NewsAgency.Models.ProfileViewModel
+
+@{
+    ViewBag.Title = "ProfilePage";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+@section Scripts{
+
+}
+
+
+@section Links{
+    @Html.Partial((string)ViewBag.PanelName)
+
+}
+@section Body{
+
+
+
+    <div class="panel panel-primary">
+        <div class="panel-heading">
+            <h2> @Model.Name @Model.Family Welcome</h2>
+        </div>
+        <div class="panel-body">
+            <div class="row">
+                <div class="col-md-4 col-sm-4">
+
+                    <a class="btn btn-success" href="/NewsManagement/ShowNewsWithStatus?status=1&username=@Model.UserName"> Number of published news<span class="badge">@Model.Confirmed_News_Count</span></a>
+                </div>
+                <div class="col-md-4 col-sm-4">
+
+
+                    <a class="btn btn-danger" href="/NewsManagement/ShowNewsWithStatus?status=2&username=@Model.UserName">  Number of rejected news  <span class="badge">@Model.Rejected_News_Count</span></a>
+
+                </div>
+                <div class="col-md-4 col-sm-4">
+
+                    <a class="btn btn-info" href="/NewsManagement/ShowNewsWithStatus?status=3&username=@Model.UserName">
+                        Number of pending news approvals
+                        <span class="badge">
+                            @Model.Waiting_News_Count
+                        </span>
+                    </a>
+
+                </div>
+            </div>
+            <div class="row" style="margin-top:20px">
+                <div class="col-md-12">
+                    <div class="progress">
+                        <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width:@Model.Confirm_percent%">
+                            @Model.Confirm_percent% Approved
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-12">
+                    <div class="progress">
+                        <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width:@Model.Rejected_percent%">
+                            @Model.Rejected_percent%  Rejected
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+}
+
